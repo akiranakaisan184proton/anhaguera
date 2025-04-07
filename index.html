@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anhanguera - Regularize seus Débitos com Desconto Especial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 40px;
+        }
+        
+        .hero {
+            padding: 30px 0;
+            background: linear-gradient(to bottom, #fff, #f5f5f5);
+        }
+        
+        h1 {
+            color: #FF3300;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .alert-banner {
+            background-color: #FF3300;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0 30px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(255, 51, 0, 0.3);
+        }
+        
+        .section-title {
+            color: #FF3300;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .subtitle {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            background-color: #FFFF00;
+            padding: 0 5px;
+            font-weight: bold;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+            margin: 40px 0;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #FF3300;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .tag-primary {
+            background-color: #fff;
+            color: #FF3300;
+            border: 1px solid #FF3300;
+        }
+        
+        .tag-secondary {
+            background-color: #fff;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: #FF3300;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: rotate(15deg);
+            z-index: 1;
+        }
+        
+        .benefits-list {
+            margin: 30px 0;
+            list-style: none;
+        }
+        
+        .benefits-list li {
+            padding: 10px 0 10px 35px;
+            position: relative;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        .benefits-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FF3300;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .risks-list {
+            margin: 30px 0;
+            list-style: none;
+            background-color: #fff0f0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #FF3300;
+        }
+        
+        .risks-list li {
+            padding: 10px 0 10px 35px;
+            position: relative;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        .risks-list li:before {
+            content: '⚠️';
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+        
+        .form-container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            margin-top: 40px;
+            border: 2px solid #FF3300;
+        }
+        
+        .form-title {
+            color: #FF3300;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .form-subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus {
+            border-color: #FF3300;
+            outline: none;
+        }
+        
+        .form-button {
+            background-color: #FF3300;
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+            max-width: 400px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(255, 51, 0, 0.3);
+        }
+        
+        .form-button:hover {
+            background-color: #e62e00;
+            transform: scale(1.03);
+        }
+        
+        .countdown {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .countdown-box {
+            background-color: #FF3300;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            min-width: 60px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+        
+        .testimonials {
+            margin: 50px 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 4rem;
+            color: #f0f0f0;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .urgency-badge {
+            background-color: #FF3300;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .countdown-timer {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-F4UQNZZuF9dFOr7pmVmtG6OutoQn4v.png" alt="Logo Anhanguera" class="logo">
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>REGULARIZE SEUS DÉBITOS COM DESCONTO ESPECIAL!</h1>
+            
+            <div class="alert-banner">
+                OFERTA EXCLUSIVA: Até 20% de desconto para regularizar sua situação acadêmica!
+            </div>
+            
+            <p class="subtitle">
+                Sabemos que imprevistos acontecem. Por isso, a Anhanguera está oferecendo uma <span class="highlight">oportunidade única</span> para você regularizar sua situação financeira com condições especiais e continuar sua jornada acadêmica sem preocupações.
+            </p>
+            
+            <div class="urgency-badge">
+                ATENÇÃO: Oferta por tempo limitado! Não perca esta oportunidade!
+            </div>
+            
+            <div class="countdown">
+                <p>Esta oferta especial expira em:</p>
+                <div class="countdown-timer">
+                    <div>
+                        <div class="countdown-box" id="days">03</div>
+                        <div class="countdown-label">Dias</div>
+                    </div>
+                    <div>
+                        <div class="countdown-box" id="hours">11</div>
+                        <div class="countdown-label">Horas</div>
+                    </div>
+                    <div>
+                        <div class="countdown-box" id="minutes">45</div>
+                        <div class="countdown-label">Minutos</div>
+                    </div>
+                    <div>
+                        <div class="countdown-box" id="seconds">22</div>
+                        <div class="countdown-label">Segundos</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">VANTAGENS EXCLUSIVAS</h2>
+            
+            <ul class="benefits-list">
+                <li>Desconto de até <span class="highlight">20%</span> no valor total dos débitos</li>
+                <li>Desbloqueio imediato do seu acesso ao portal acadêmico</li>
+                <li>Liberação para rematrícula e continuidade dos estudos</li>
+                <li>Possibilidade de parcelamento em condições especiais</li>
+                <li>Regularização do seu nome em órgãos de proteção ao crédito</li>
+                <li>Atendimento personalizado por um consultor especializado</li>
+            </ul>
+            
+            <h2 class="section-title">RISCOS DE NÃO REGULARIZAR</h2>
+            
+            <ul class="risks-list">
+                <li>Bloqueio de acesso ao portal acadêmico e conteúdos do curso</li>
+                <li>Impossibilidade de realizar rematrícula para o próximo semestre</li>
+                <li>Inclusão do seu nome no Serasa e outros órgãos de proteção ao crédito</li>
+                <li>Dificuldade para obter crédito, financiamentos e cartões</li>
+                <li>Risco de ações judiciais de cobrança e aumento do valor da dívida</li>
+                <li>Atraso na conclusão do seu curso e na sua carreira profissional</li>
+            </ul>
+            
+            <div class="card">
+                <span class="discount-badge">20% OFF</span>
+                <h3>Acordo Personalizado</h3>
+                <p>Condições especiais adaptadas à sua realidade financeira com até 20% de desconto!</p>
+                <div class="tags">
+                    <span class="tag tag-primary">Personalizado</span>
+                    <span class="tag tag-primary">Consultor</span>
+                    <span class="tag tag-secondary">Parcelamento</span>
+                </div>
+                <p><strong>Vantagem:</strong> Solução sob medida para seu caso, com as melhores condições possíveis para sua situação.</p>
+                <p><strong>Benefício adicional:</strong> Regularização imediata da sua situação acadêmica e financeira.</p>
+            </div>
+            
+            <div class="testimonials">
+                <h2 class="section-title">ALUNOS QUE REGULARIZARAM</h2>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Estava com medo de perder o semestre por causa dos débitos. Com o desconto de 20%, consegui quitar tudo e continuar meus estudos sem preocupação. O atendimento foi excelente e rápido!"</p>
+                    <p class="testimonial-author">Carlos S. - Estudante de Administração</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Meu nome estava no Serasa e isso estava me impedindo de conseguir um emprego. Graças ao parcelamento especial, consegui regularizar minha situação e hoje estou formada e empregada!"</p>
+                    <p class="testimonial-author">Mariana L. - Formada em Pedagogia</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Achei que teria que abandonar o curso por causa das mensalidades atrasadas. O consultor me ofereceu um acordo personalizado com 20% de desconto que coube no meu orçamento. Agora estou em dia e tranquilo para me formar!"</p>
+                    <p class="testimonial-author">Rafael M. - Estudante de Análise de Sistemas</p>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <h3 class="form-title">Solicite contato de um consultor agora</h3>
+                <p class="form-subtitle">Preencha seus dados e um especialista entrará em contato para oferecer a melhor solução para o seu caso</p>
+                
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nome completo</label>
+                        <input type="text" id="name" class="form-input" required placeholder="Digite seu nome completo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ra" class="form-label">RA (Registro Acadêmico)</label>
+                        <input type="text" id="ra" class="form-input" required placeholder="Digite seu RA">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" id="email" class="form-input" required placeholder="Digite seu e-mail">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Telefone/WhatsApp</label>
+                        <input type="tel" id="phone" class="form-input" required placeholder="Digite seu telefone com DDD">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course" class="form-label">Curso</label>
+                        <input type="text" id="course" class="form-input" required placeholder="Digite o nome do seu curso">
+                    </div>
+                    
+                    <button type="submit" class="form-button">QUERO REGULARIZAR MINHA SITUAÇÃO</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Contador regressivo
+        function updateCountdown() {
+            const now = new Date();
+            const targetDate = new Date();
+            targetDate.setDate(now.getDate() + 3);
+            targetDate.setHours(23, 59, 59);
+            
+            const diff = targetDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Funcionalidade para o formulário
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aqui você adicionaria o código para enviar os dados do formulário
+            // para o seu backend ou serviço de e-mail
+            
+            alert('Obrigado! Um consultor entrará em contato em breve para ajudar com a regularização dos seus débitos. Fique tranquilo, você está no caminho certo para resolver sua situação acadêmica!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
