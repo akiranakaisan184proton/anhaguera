@@ -34,7 +34,7 @@
         }
         
         .logo {
-            height: 40px;
+            height: 60px; /* Aumentado de 40px para 60px */
         }
         
         .hero {
@@ -44,7 +44,7 @@
         
         h1 {
             color: #FF3300;
-            font-size: 2.5rem;
+            font-size: 2.2rem; /* Diminuído de 2.5rem para 2.2rem */
             margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: bold;
@@ -269,38 +269,6 @@
             transform: scale(1.03);
         }
         
-        .countdown {
-            text-align: center;
-            margin: 30px 0;
-            font-size: 1.2rem;
-            color: #333;
-        }
-        
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .countdown-box {
-            background-color: #FF3300;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.5rem;
-            min-width: 60px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
-        .countdown-label {
-            font-size: 0.8rem;
-            margin-top: 5px;
-            text-transform: uppercase;
-        }
-        
         .testimonials {
             margin: 50px 0;
         }
@@ -348,10 +316,123 @@
             animation: pulse 2s infinite;
         }
         
+        .pix-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: #32BCAD;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .pix-badge:before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='white' d='M242.4 292.5C247.8 287.1 257.1 287.1 262.5 292.5L339.5 369.5C351.5 381.5 351.5 401.1 339.5 413.1C327.5 425.1 307.9 425.1 295.9 413.1L242.4 359.6C237.1 354.2 237.1 344.9 242.4 339.5L242.4 292.5zM416 473.5C404 461.5 404 441.9 416 429.9L442.4 403.5C447.8 398.1 457.1 398.1 462.5 403.5L473.5 414.5C478.9 419.9 478.9 429.2 473.5 434.6L416 492C404 504 384.4 504 372.4 492L362.9 482.6C357.5 477.2 357.5 467.9 362.9 462.5L416 473.5zM416 38.61C428 50.61 428 70.22 416 82.21L362.9 49.47C357.5 44.04 357.5 34.76 362.9 29.32L372.4 19.8C384.4 7.796 404 7.796 416 19.8L473.5 77.26C478.9 82.69 478.9 91.98 473.5 97.42L462.5 108.5C457.1 113.9 447.8 113.9 442.4 108.5L416 82.13V38.61zM242.4 152.5C237.1 147.1 237.1 137.8 242.4 132.4L295.9 78.87C307.9 66.87 327.5 66.87 339.5 78.87C351.5 90.87 351.5 110.5 339.5 122.5L262.5 199.5C257.1 204.9 247.8 204.9 242.4 199.5V152.5zM96 38.61V82.13L69.61 108.5C64.18 113.9 54.89 113.9 49.46 108.5L38.4 97.42C32.96 91.98 32.96 82.69 38.4 77.26L95.86 19.8C107.9 7.796 127.5 7.796 139.5 19.8L149 29.32C154.4 34.76 154.4 44.04 149 49.47L96 38.61zM96 429.9C84.01 441.9 84.01 461.5 96 473.5L149 462.5C154.4 467.9 154.4 477.2 149 482.6L139.5 492C127.5 504 107.9 504 95.86 492L38.4 434.6C32.96 429.2 32.96 419.9 38.4 414.5L49.46 403.5C54.89 398.1 64.18 398.1 69.61 403.5L96 429.9zM172.5 199.5C167.1 204.9 157.8 204.9 152.4 199.5L75.4 122.5C63.4 110.5 63.4 90.87 75.4 78.87C87.4 66.87 107 66.87 119 78.87L172.5 132.4C177.9 137.8 177.9 147.1 172.5 152.5V199.5zM172.5 339.5C177.9 344.9 177.9 354.2 172.5 359.6L119 413.1C107 425.1 87.4 425.1 75.4 413.1C63.4 401.1 63.4 381.5 75.4 369.5L152.4 292.5C157.8 287.1 167.1 287.1 172.5 292.5V339.5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 8px;
+        }
+        
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.03); }
             100% { transform: scale(1); }
+        }
+        
+        /* Estilos para a tela de agradecimento */
+        .thank-you-container {
+            display: none; /* Inicialmente oculto, será mostrado via JavaScript */
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            margin: 40px 0;
+            text-align: center;
+            border: 2px solid #FF3300;
+        }
+        
+        .thank-you-icon {
+            font-size: 80px;
+            color: #FF3300;
+            margin-bottom: 20px;
+        }
+        
+        .thank-you-title {
+            color: #FF3300;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .thank-you-message {
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .steps-container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .steps-title {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .steps-list {
+            list-style: none;
+        }
+        
+        .steps-list li {
+            padding: 10px 0 10px 35px;
+            position: relative;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        .steps-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FF3300;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .return-button {
+            background-color: #FF3300;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s, transform 0.2s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(255, 51, 0, 0.3);
+            text-decoration: none;
+        }
+        
+        .return-button:hover {
+            background-color: #e62e00;
+            transform: scale(1.03);
         }
         
         @media (max-width: 768px) {
@@ -363,8 +444,12 @@
                 font-size: 1.5rem;
             }
             
-            .countdown-timer {
-                flex-wrap: wrap;
+            .thank-you-title {
+                font-size: 1.7rem;
+            }
+            
+            .thank-you-icon {
+                font-size: 60px;
             }
         }
     </style>
@@ -383,7 +468,7 @@
             <h1>REGULARIZE SEUS DÉBITOS COM DESCONTO ESPECIAL!</h1>
             
             <div class="alert-banner">
-                OFERTA EXCLUSIVA: Até 20% de desconto para regularizar sua situação acadêmica!
+                OFERTA EXCLUSIVA: Até 20% de desconto para pagamentos via PIX!
             </div>
             
             <p class="subtitle">
@@ -394,37 +479,15 @@
                 ATENÇÃO: Oferta por tempo limitado! Não perca esta oportunidade!
             </div>
             
-            <div class="countdown">
-                <p>Esta oferta especial expira em:</p>
-                <div class="countdown-timer">
-                    <div>
-                        <div class="countdown-box" id="days">03</div>
-                        <div class="countdown-label">Dias</div>
-                    </div>
-                    <div>
-                        <div class="countdown-box" id="hours">11</div>
-                        <div class="countdown-label">Horas</div>
-                    </div>
-                    <div>
-                        <div class="countdown-box" id="minutes">45</div>
-                        <div class="countdown-label">Minutos</div>
-                    </div>
-                    <div>
-                        <div class="countdown-box" id="seconds">22</div>
-                        <div class="countdown-label">Segundos</div>
-                    </div>
-                </div>
-            </div>
-            
             <h2 class="section-title">VANTAGENS EXCLUSIVAS</h2>
             
             <ul class="benefits-list">
-                <li>Desconto de até <span class="highlight">20%</span> no valor total dos débitos</li>
+                <li>Desconto de até <span class="highlight">20%</span> no valor total dos débitos para pagamentos via PIX</li>
                 <li>Desbloqueio imediato do seu acesso ao portal acadêmico</li>
                 <li>Liberação para rematrícula e continuidade dos estudos</li>
-                <li>Possibilidade de parcelamento em condições especiais</li>
                 <li>Regularização do seu nome em órgãos de proteção ao crédito</li>
                 <li>Atendimento personalizado por um consultor especializado</li>
+                <li>Processo rápido e simplificado</li>
             </ul>
             
             <h2 class="section-title">RISCOS DE NÃO REGULARIZAR</h2>
@@ -440,39 +503,37 @@
             
             <div class="card">
                 <span class="discount-badge">20% OFF</span>
-                <h3>Acordo Personalizado</h3>
-                <p>Condições especiais adaptadas à sua realidade financeira com até 20% de desconto!</p>
+                <h3>Acordo Personalizado via PIX</h3>
+                <p>Condições especiais adaptadas à sua realidade financeira com até 20% de desconto para pagamentos via PIX!</p>
                 <div class="tags">
-                    <span class="tag tag-primary">Personalizado</span>
-                    <span class="tag tag-primary">Consultor</span>
-                    <span class="tag tag-secondary">Parcelamento</span>
                 </div>
                 <p><strong>Vantagem:</strong> Solução sob medida para seu caso, com as melhores condições possíveis para sua situação.</p>
                 <p><strong>Benefício adicional:</strong> Regularização imediata da sua situação acadêmica e financeira.</p>
+                <p><strong>Por que PIX?</strong> Oferecemos desconto especial para pagamentos via PIX devido à rapidez e segurança da transação, permitindo que você economize e resolva sua situação de forma imediata.</p>
             </div>
             
             <div class="testimonials">
                 <h2 class="section-title">ALUNOS QUE REGULARIZARAM</h2>
                 
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Estava com medo de perder o semestre por causa dos débitos. Com o desconto de 20%, consegui quitar tudo e continuar meus estudos sem preocupação. O atendimento foi excelente e rápido!"</p>
+                    <p class="testimonial-text">"Estava com medo de perder o semestre por causa dos débitos. Com o desconto de 20% pagando via PIX, consegui quitar tudo e continuar meus estudos sem preocupação. O atendimento foi excelente e rápido!"</p>
                     <p class="testimonial-author">Carlos S. - Estudante de Administração</p>
                 </div>
                 
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Meu nome estava no Serasa e isso estava me impedindo de conseguir um emprego. Graças ao parcelamento especial, consegui regularizar minha situação e hoje estou formada e empregada!"</p>
+                    <p class="testimonial-text">"Meu nome estava no Serasa e isso estava me impedindo de conseguir um emprego. Graças ao acordo especial com pagamento via PIX, consegui regularizar minha situação e hoje estou formada e empregada!"</p>
                     <p class="testimonial-author">Mariana L. - Formada em Pedagogia</p>
                 </div>
                 
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Achei que teria que abandonar o curso por causa das mensalidades atrasadas. O consultor me ofereceu um acordo personalizado com 20% de desconto que coube no meu orçamento. Agora estou em dia e tranquilo para me formar!"</p>
+                    <p class="testimonial-text">"Achei que teria que abandonar o curso por causa das mensalidades atrasadas. O consultor me ofereceu um acordo personalizado com 20% de desconto via PIX que coube no meu orçamento. Agora estou em dia e tranquilo para me formar!"</p>
                     <p class="testimonial-author">Rafael M. - Estudante de Análise de Sistemas</p>
                 </div>
             </div>
             
-            <div class="form-container">
+            <div class="form-container" id="contact-form-container">
                 <h3 class="form-title">Solicite contato de um consultor agora</h3>
-                <p class="form-subtitle">Preencha seus dados e um especialista entrará em contato para oferecer a melhor solução para o seu caso</p>
+                <p class="form-subtitle">Preencha seus dados e um especialista entrará em contato para oferecer a melhor solução para o seu caso com até 20% de desconto via PIX</p>
                 
                 <form id="contact-form">
                     <div class="form-group">
@@ -503,42 +564,66 @@
                     <button type="submit" class="form-button">QUERO REGULARIZAR MINHA SITUAÇÃO</button>
                 </form>
             </div>
+            
+            <!-- Tela de Agradecimento -->
+            <div class="thank-you-container" id="thank-you-container">
+                <div class="thank-you-icon">✓</div>
+                <h2 class="thank-you-title">Obrigado pelo seu interesse!</h2>
+                <p class="thank-you-message">
+                    Recebemos sua solicitação com sucesso. Um de nossos consultores especializados entrará em contato com você em breve para oferecer as melhores condições para regularização dos seus débitos com até 20% de desconto via PIX.
+                </p>
+                
+                <div class="steps-container">
+                    <h3 class="steps-title">Próximos passos:</h3>
+                    <ul class="steps-list">
+                        <li>Nosso consultor entrará em contato através do telefone/WhatsApp informado</li>
+                        <li>Você receberá uma proposta personalizada com condições especiais</li>
+                        <li>Após a negociação, você poderá efetuar o pagamento via PIX com desconto</li>
+                        <li>Sua situação acadêmica será regularizada imediatamente após a confirmação do pagamento</li>
+                    </ul>
+                </div>
+                
+                <p class="thank-you-message">
+                    <strong>Fique tranquilo!</strong> Você está no caminho certo para resolver sua situação acadêmica e financeira. Em caso de dúvidas, entre em contato com nossa central de atendimento.
+                </p>
+                
+                <a href="#" class="return-button" id="return-button">Voltar para o início</a>
+            </div>
         </div>
     </section>
     
     <script>
-        // Contador regressivo
-        function updateCountdown() {
-            const now = new Date();
-            const targetDate = new Date();
-            targetDate.setDate(now.getDate() + 3);
-            targetDate.setHours(23, 59, 59);
-            
-            const diff = targetDate - now;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-        
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-        
-        // Funcionalidade para o formulário
+        // Funcionalidade para o formulário e tela de agradecimento
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Aqui você adicionaria o código para enviar os dados do formulário
-            // para o seu backend ou serviço de e-mail
+            // Ocultar o formulário e mostrar a tela de agradecimento
+            document.getElementById('contact-form-container').style.display = 'none';
+            document.getElementById('thank-you-container').style.display = 'block';
             
-            alert('Obrigado! Um consultor entrará em contato em breve para ajudar com a regularização dos seus débitos. Fique tranquilo, você está no caminho certo para resolver sua situação acadêmica!');
-            this.reset();
+            // Rolar para a tela de agradecimento
+            window.scrollTo({
+                top: document.getElementById('thank-you-container').offsetTop - 50,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Botão para voltar ao início
+        document.getElementById('return-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Mostrar o formulário e ocultar a tela de agradecimento
+            document.getElementById('contact-form-container').style.display = 'block';
+            document.getElementById('thank-you-container').style.display = 'none';
+            
+            // Limpar o formulário
+            document.getElementById('contact-form').reset();
+            
+            // Rolar para o topo da página
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
